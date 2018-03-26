@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -91,7 +91,7 @@
                 <h1 class="section-heading text-white">The Trends</h1>
                 <p class="text mb-4">
                     We analyzed a subset of the emergency call logs that the San Francisco Police Department (SFPD)
-                    recieved in order to find any interesting trends that may be important.
+                    received in order to find any interesting trends that may be important.
                 </p>
                 <hr class="light my-4">
                 <div class="row">
@@ -152,41 +152,103 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Sturdy Templates</h3>
-                    <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
-                </div>
+            <div class="col-lg-8">
+                <div id="chartDiv" style="height: 600px"></div>
+                <script>
+                    var chartData = {
+
+                        "type": "heatmap",
+                        "series": [{'values': [0, 0, 0, 1, 0, 0, 2, 2, 3, 4, 0]}, {'values': [0, 0, 1, 5, 0, 6, 0, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1, 0, 7, 0, 0, 0, 1, 0, 1, 0, 0, 1, 8]}, {'values': [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]}, {'values': [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 10, 0, 1, 0, 9, 7, 2, 0, 0, 0, 0]}, {'values': [8, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 7, 1, 0, 1, 0, 3]}, {'values': [11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 7, 11, 8, 3, 0, 0, 0]}, {'values': [0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 3, 1, 7, 7, 0, 0, 0, 7, 0, 0]}, {'values': [0, 4, 0, 0, 0, 0, 10, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 12, 0, 0, 1, 1, 0]}, {'values': [1, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 8, 2, 0, 0, 0, 4]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]}, {'values': [0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 0, 0, 8, 0, 7, 0, 0, 0, 7]}, {'values': [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 7, 1, 0, 0, 1, 1, 0, 0, 0, 0]}, {'values': [0, 0, 1, 1, 1, 0, 0, 8, 0, 0, 0, 0, 0, 5, 0, 1, 1, 0, 0, 3, 0, 0, 0, 0]}, {'values': [0, 8, 0, 0, 7, 0, 0, 3, 0, 0, 0, 0, 8, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4]}, {'values': [0, 0, 0, 0, 0, 8, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7, 0, 5, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {'values': [1, 0, 0, 0, 0, 0, 1, 0, 13, 1, 0]}, {'values': [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {'values': [0, 1, 0, 2, 0, 0, 0, 8, 0, 0, 0, 7, 0, 0, 0, 1, 0, 14, 8, 0, 8, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0]}, {'values': [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 1, 0, 1, 0, 0, 0, 9, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 8, 0, 1, 0, 0, 0, 0, 0, 0, 7, 8, 0, 1, 0]}, {'values': [0, 0, 8, 0, 0, 8, 0, 0, 0, 0, 9, 8, 0, 3, 14, 8, 0, 1]}, {'values': [0, 0, 0, 9, 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 3, 1, 0, 0, 0]}],
+
+                        title: {
+                            text: 'Most Common Incident Type' // Adds a title to your chart
+                        },
+                        "scale-y": {
+                            "labels": ['94130', '94131', '94132', '94133', '94134', '94158', '94118', '94112', '94110', '94111', '94116', '94117', '94114', '94115', '94127', '94124', '94123', '94122', '94121', '94129', '94109', '94108', '94103', '94102', '94105', '94104', '94107'] //Y-Axis Scale Labels
+                        },
+                        "plot": {
+                            "rules": [
+                                {
+                                    'background-color': '#c0f273',
+                                    'rule': '%v == 8',
+                                    'tooltip-text': 'Structure Fire'
+                                }, {
+                                    'background-color': '#c54907',
+                                    'rule': '%v == 13',
+                                    'tooltip-text': 'Water Rescue'
+                                }, {
+                                    'background-color': '#0415d9',
+                                    'rule': '%v == 12',
+                                    'tooltip-text': 'Fuel Spill'
+                                }, {
+                                    'background-color': '#e9c8e9',
+                                    'rule': '%v == 4',
+                                    'tooltip-text': 'Outside Fire'
+                                }, {
+                                    'background-color': '#8af3e1',
+                                    'rule': '%v == 14',
+                                    'tooltip-text': 'Elevator / Escalator Rescue'
+                                }, {
+                                    'background-color': '#37ea7a',
+                                    'rule': '%v == 5',
+                                    'tooltip-text': 'Electrical Hazard'
+                                }, {
+                                    'background-color': '#f0d52b',
+                                    'rule': '%v == 3',
+                                    'tooltip-text': 'Citizen Assist / Service Call'
+                                }, {
+                                    'background-color': '#1F2557',
+                                    'rule': '%v == 0',
+                                    'tooltip-text': 'Medical Incident'
+                                }, {
+                                    'background-color': '#74880f',
+                                    'rule': '%v == 10',
+                                    'tooltip-text': 'Vehicle Fire'
+                                }, {
+                                    'background-color': '#e31b3f',
+                                    'rule': '%v == 6',
+                                    'tooltip-text': 'Smoke Investigation (Outside)'
+                                }, {
+                                    'background-color': '#e00330',
+                                    'rule': '%v == 2',
+                                    'tooltip-text': 'Other'
+                                }, {
+                                    'background-color': '#15f085',
+                                    'rule': '%v == 1',
+                                    'tooltip-text': 'Alarms'
+                                }, {
+                                    'background-color': '#fb4e0a',
+                                    'rule': '%v == 9',
+                                    'tooltip-text': 'Gas Leak (Natural and LP Gases)'
+                                }, {
+                                    'background-color': '#5054e5',
+                                    'rule': '%v == 11',
+                                    'tooltip-text': 'Odor (Strange / Unknown)'
+                                }, {
+                                    'background-color': '#13990a',
+                                    'rule': '%v == 7',
+                                    'tooltip-text': 'Traffic Collision'
+                                }
+                            ]
+                        }
+                    };
+                    zingchart.render({ // Render Method[3]
+                        id: 'chartDiv',
+                        data: chartData,
+                        height: 600,
+                        width: 600
+                    });
+                </script>
             </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Ready to Ship</h3>
-                    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Up to Date</h3>
-                    <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box mt-5 mx-auto">
-                    <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Made with Love</h3>
-                    <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-                </div>
+            <div class="col-lg-4 align-self-center">
+                <p class="text mb-4">
+                    Now, let's look at what the most likely emergency request is given a specific location (zip) and time of day. For the most part, medical emergencies remain the most likely incident type for the majority of regions and times, and this frequency only increases the earlier in the day it it.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="p-0" id="portfolio">
-
-</section>
 
 <section class="bg-dark text-white" id="time">
 
