@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Optimize San Francisco</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- Custom fonts for this template -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
+            integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+            integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+            crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="style/creative.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Optimize San Francisco</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#data">The Trends</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#time">Dispatch Time</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="text-uppercase">
+                    <strong>How can we make San Francisco a safer city?</strong>
+                </h1>
+                <hr>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="text mb-5">
+                    San Francisco is one of the fastest growing cities in the United States.
+                    However, as the population grows, so does the need for emergency services.
+                    Here we are going to explore how well the San Francisco's public services currently handle cases and
+                    explore solutions to make this city even safer and better prepared for the future.
+                </p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#data">Get started!</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="data">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-left">
+                <h1 class="section-heading text-white">The Trends</h1>
+                <p class="text mb-4">
+                    We analyzed a subset of the emergency call logs that the San Francisco Police Department (SFPD)
+                    recieved in order to find any interesting trends that may be important.
+                </p>
+                <hr class="light my-4">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <canvas id="callTypeChart" width="300" height="300"></canvas>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <p class="text mb-4">
+                            First, let's look into the types of the emergencies that reported.
+                            As we can see, the vast majority of calls involve Medical Emergencies, with Alarms and
+                            Fires coming close in behind.
+                        </p>
+                    </div>
+                </div>
+                <hr class="light my-4">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <p class="text mb-4">
+                            Now, let's look into how long it took for emergency services to respond to
+                            the calls.
+                            As we can see, the vast majority of calls have a very good response time (under 7 minutes!),
+                            and with only a fraction of the calls taking more than 20 minutes.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 ml-auto">
+                        <canvas id="responseChart" width="300" height="300"></canvas>
+                    </div>
+                </div>
+
+                <hr class="light my-4">
+                <div class="row">
+                    <div class="col-lg-6 ml-auto">
+                        <canvas id="resultChart" width="300" height="300"></canvas>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <p class="text mb-4">
+                            And now finally, let's look into how the calls were actually resolved. As we can see,
+                            roughly half of the calls required some form of transportation after arriving on scene (Code
+                            2 and 3). And of the remaining half, around 50% consisted of fire calls and the other 50%
+                            were considered cases where the caller could either not be found, refused transport, or had
+                            no merit.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-info mb-4">Start Bootstrap has everything you need to get your new website up and
+                    running in no time! All of the templates and themes on Start Bootstrap are open source, free to
+                    download, and easy to use. No strings attached!</p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">At Your Service</h2>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Sturdy Templates</h3>
+                    <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Ready to Ship</h3>
+                    <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Up to Date</h3>
+                    <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Made with Love</h3>
+                    <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-0" id="portfolio">
+
+</section>
+
+<section class="bg-dark text-white" id="time">
+
+    <div class="container text-center">
+        <h2 class="mb-4">Dispatch Time</h2>
+    </div>
+    <div class="col-lg-12 mx-auto text-left">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="map" style="height:600px;width:600px">
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <p class="text mb-4">
+                    Finally, let's take a look at the average response time for each area. The red regions on this
+                    heatmap indicate very slow response times, while the blue regions indicate very quick responses.
+                    It is evident that the majority of delays occur in the Mid-Market region. All surrounding areas
+                    enjoy, for the most part, relatively quick emergency response times. The best way to decrease
+                    the delays in this "hot zone" would probably be to increase the number of patrolling transport
+                    vehicles in the area. However, since traffic in this area is also fairly congested, it may be
+                    necessary to build an auxiliary facility to support this area in the future.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <hr class="my-4">
+                <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an
+                    email and we will get back to you as soon as possible!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                <p>123-456-6789</p>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                <p>
+                    <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.js"></script>
+<script src="js/scrollreveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script src="js/creative.min.js"></script>
+<script src="js/palette.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQtUV_snQ-IxBIxee7RxkPHVFKPToJ6Ks"></script>
+<script src="js/heatmap.min.js"></script>
+<script src="js/g-maps heat.js"></script>
+<script src="js/index.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        initMap();
+    });
+</script>
+</body>
+
+</html>
