@@ -16408,3 +16408,87 @@ function initMap() {
 
     heatmap.setData(testData);
 }
+
+var chartData = {
+
+    "type": "heatmap",
+    "series": [{'values': [0, 0, 0, 1, 0, 0, 2, 2, 3, 4, 0]}, {'values': [0, 0, 1, 5, 0, 6, 0, 7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1, 0, 7, 0, 0, 0, 1, 0, 1, 0, 0, 1, 8]}, {'values': [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]}, {'values': [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 10, 0, 1, 0, 9, 7, 2, 0, 0, 0, 0]}, {'values': [8, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 7, 1, 0, 1, 0, 3]}, {'values': [11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 7, 11, 8, 3, 0, 0, 0]}, {'values': [0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 3, 1, 7, 7, 0, 0, 0, 7, 0, 0]}, {'values': [0, 4, 0, 0, 0, 0, 10, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 12, 0, 0, 1, 1, 0]}, {'values': [1, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 8, 2, 0, 0, 0, 4]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]}, {'values': [0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 0, 0, 8, 0, 7, 0, 0, 0, 7]}, {'values': [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 7, 1, 0, 0, 1, 1, 0, 0, 0, 0]}, {'values': [0, 0, 1, 1, 1, 0, 0, 8, 0, 0, 0, 0, 0, 5, 0, 1, 1, 0, 0, 3, 0, 0, 0, 0]}, {'values': [0, 8, 0, 0, 7, 0, 0, 3, 0, 0, 0, 0, 8, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4]}, {'values': [0, 0, 0, 0, 0, 8, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7, 0, 5, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {'values': [1, 0, 0, 0, 0, 0, 1, 0, 13, 1, 0]}, {'values': [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {'values': [0, 1, 0, 2, 0, 0, 0, 8, 0, 0, 0, 7, 0, 0, 0, 1, 0, 14, 8, 0, 8, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0]}, {'values': [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 1, 0, 1, 0, 0, 0, 9, 0, 0]}, {'values': [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 8, 0, 1, 0, 0, 0, 0, 0, 0, 7, 8, 0, 1, 0]}, {'values': [0, 0, 8, 0, 0, 8, 0, 0, 0, 0, 9, 8, 0, 3, 14, 8, 0, 1]}, {'values': [0, 0, 0, 9, 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 3, 1, 0, 0, 0]}],
+
+    title: {
+        text: 'Most Common Incident Type' // Adds a title to your chart
+    },
+    "scale-y": {
+        "labels": ['94130', '94131', '94132', '94133', '94134', '94158', '94118', '94112', '94110', '94111', '94116', '94117', '94114', '94115', '94127', '94124', '94123', '94122', '94121', '94129', '94109', '94108', '94103', '94102', '94105', '94104', '94107'] //Y-Axis Scale Labels
+    },
+    "plot": {
+        "rules": [
+            {
+                'background-color': '#c0f273',
+                'rule': '%v == 8',
+                'tooltip-text': 'Structure Fire'
+            }, {
+                'background-color': '#c54907',
+                'rule': '%v == 13',
+                'tooltip-text': 'Water Rescue'
+            }, {
+                'background-color': '#0415d9',
+                'rule': '%v == 12',
+                'tooltip-text': 'Fuel Spill'
+            }, {
+                'background-color': '#e9c8e9',
+                'rule': '%v == 4',
+                'tooltip-text': 'Outside Fire'
+            }, {
+                'background-color': '#8af3e1',
+                'rule': '%v == 14',
+                'tooltip-text': 'Elevator / Escalator Rescue'
+            }, {
+                'background-color': '#37ea7a',
+                'rule': '%v == 5',
+                'tooltip-text': 'Electrical Hazard'
+            }, {
+                'background-color': '#f0d52b',
+                'rule': '%v == 3',
+                'tooltip-text': 'Citizen Assist / Service Call'
+            }, {
+                'background-color': '#1F2557',
+                'rule': '%v == 0',
+                'tooltip-text': 'Medical Incident'
+            }, {
+                'background-color': '#74880f',
+                'rule': '%v == 10',
+                'tooltip-text': 'Vehicle Fire'
+            }, {
+                'background-color': '#e31b3f',
+                'rule': '%v == 6',
+                'tooltip-text': 'Smoke Investigation (Outside)'
+            }, {
+                'background-color': '#e00330',
+                'rule': '%v == 2',
+                'tooltip-text': 'Other'
+            }, {
+                'background-color': '#15f085',
+                'rule': '%v == 1',
+                'tooltip-text': 'Alarms'
+            }, {
+                'background-color': '#fb4e0a',
+                'rule': '%v == 9',
+                'tooltip-text': 'Gas Leak (Natural and LP Gases)'
+            }, {
+                'background-color': '#5054e5',
+                'rule': '%v == 11',
+                'tooltip-text': 'Odor (Strange / Unknown)'
+            }, {
+                'background-color': '#13990a',
+                'rule': '%v == 7',
+                'tooltip-text': 'Traffic Collision'
+            }
+        ]
+    }
+};
+zingchart.render({ // Render Method[3]
+    id: 'chartDiv',
+    data: chartData,
+    height: 600,
+    width: 600
+});
