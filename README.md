@@ -1,5 +1,5 @@
 # optimize-sfpd
-Captial One Summer Summit Submission
+Capital One Summer Summit Submission
 
 Name: Kenneth Jiang
 
